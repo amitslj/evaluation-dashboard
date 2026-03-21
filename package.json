@@ -5,11 +5,13 @@
   "main": "backend/server.js",
   "scripts": {
     "start": "cd backend && node server.js",
-    "build": "cd frontend && npm install && npm run build && cd ../backend && npm install && npm run init-db",
+    "build": "npm run build:frontend && npm run build:backend && npm run init-db",
+    "build:frontend": "cd frontend && npm install --legacy-peer-deps && npm run build",
+    "build:backend": "cd backend && npm install --legacy-peer-deps --production",
+    "init-db": "cd backend && npm run init-db",
     "dev": "npm run dev:backend & npm run dev:frontend",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
-    "init-db": "cd backend && npm run init-db",
     "clear-db": "cd backend && npm run clear-db",
     "reset-db": "cd backend && npm run reset-db"
   },
