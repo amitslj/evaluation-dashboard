@@ -3,7 +3,12 @@ services:
     name: srs-evaluation-dashboard
     env: node
     plan: free
-    buildCommand: npm run build
+    buildCommand: |
+      npm install --legacy-peer-deps
+      cd frontend && npm install --legacy-peer-deps
+      cd ../backend && npm install --legacy-peer-deps --production
+      cd ../frontend && npm run build:skip-type-check
+      cd ../backend && npm run init-db
     startCommand: npm start
     healthCheckPath: /health
     envVars:

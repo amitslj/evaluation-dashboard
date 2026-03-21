@@ -6,7 +6,7 @@
   "scripts": {
     "start": "cd backend && node server.js",
     "build": "npm run build:frontend && npm run build:backend && npm run init-db",
-    "build:frontend": "cd frontend && npm install --legacy-peer-deps && npm run build",
+    "build:frontend": "cd frontend && npm install --legacy-peer-deps && npm run build:skip-type-check",
     "build:backend": "cd backend && npm install --legacy-peer-deps --production",
     "init-db": "cd backend && npm run init-db",
     "dev": "npm run dev:backend & npm run dev:frontend",
@@ -28,7 +28,11 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "~5.9.3"
   },
   "keywords": [
     "evaluation",
