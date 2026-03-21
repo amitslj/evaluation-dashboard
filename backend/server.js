@@ -56,26 +56,38 @@ const upload = multer({
 
 // Initialize SQLite database
 const dbPath = path.join(__dirname, 'evaluations.db');
-const db = new sqlite3.Database(dbPath);
+console.log('🔧 Initializing database at:', dbPath);
 
-// Create evaluations table
-db.serialize(() => {
-  db.run(`
-    CREATE TABLE IF NOT EXISTS evaluations (
-      id TEXT PRIMARY KEY,
-      candidateName TEXT NOT NULL,
-      totalExperience TEXT,
-      overallRating TEXT,
-      recommendation TEXT,
-      interviewDate TEXT,
-      skillsProfile TEXT,
-      technicalStrengths TEXT,
-      technicalWeaknesses TEXT,
-      originalFileName TEXT,
-      uploadedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-      createdBy TEXT DEFAULT 'system'
-    )
-  `);
+const db = new sqlite3.Database(dbPath, (err) => {
+  if (err) {
+    console.error('❌ Error opening database:', err);
+  } else {
+    console.log('✅ Database connection established');
+  }
+});
+
+// Create evaluations table (non-blocking)
+db.run(`
+  CREATE TABLE IF NOT EXISTS evaluations (
+    id TEXT PRIMARY KEY,
+    candidateName TEXT NOT NULL,
+    totalExperience TEXT,
+    overallRating TEXT,
+    recommendation TEXT,
+    interviewDate TEXT,
+    skillsProfile TEXT,
+    technicalStrengths TEXT,
+    technicalWeaknesses TEXT,
+    originalFileName TEXT,
+    uploadedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    createdBy TEXT DEFAULT 'system'
+  )
+`, (err) => {
+  if (err) {
+    console.error('❌ Error creating table:', err);
+  } else {
+    console.log('✅ Evaluations table ready');
+  }
 });
 
 // Parse evaluation data from Word document text
@@ -545,10 +557,18 @@ app.get('/health', (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
+const server = app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Evaluation Dashboard API running on port ${PORT}`);
+  console.log(`🌍 Environment: ${NODE_ENV}`);
   console.log(`📊 Database: ${dbPath}`);
   console.log(`🔗 Health check: http://localhost:${PORT}/health`);
+  console.log(`✅ Server startup complete - ready to accept connections`);
+});
+
+// Handle server startup errors
+server.on('error', (err) => {
+  console.error('❌ Server startup error:', err);
+  process.exit(1);
 });
 
 // Graceful shutdown
