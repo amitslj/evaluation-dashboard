@@ -1,4 +1,0 @@
-I am working with SRS Infoway as a Technical consultant screening candidates for L1 interview and want to build a new tool which shows the candidate evaluation results as part of the SRS Infoway Tech Consultation.
-The tool should be able to accept evaluation results from a word document, scrap the document for key information and then prepare dashboards, bar graphs, charts etc.. which shows how the evaluations are going.
-Usually, everyday there are 5-7 evaluations happening and thus towards month end or quarter end its essential to understand where we stand with the number & quality of evaluations.
-The tool should be frontend built in React, backend angular with Node and use Shadcn and Tailwind css to make the dashboard look very cool.
