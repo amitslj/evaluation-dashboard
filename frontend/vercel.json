@@ -1,14 +1,8 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!api/.*).*)",
+      "destination": "/index.html"
     }
-  ],
-  "env": {
-    "VITE_API_BASE_URL": "https://srs-evaluation-backend.onrender.com/api"
-  }
+  ]
 }
