@@ -45,7 +45,7 @@ cd evaluation-dashboard
 
 ### 2. Install Dependencies
 
-**Backend Setup:**
+**Backend Setup:***
 ```bash
 cd backend
 npm install
