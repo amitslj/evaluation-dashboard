@@ -1,0 +1,33 @@
+{
+  "name": "srs-evaluation-dashboard",
+  "version": "1.0.0",
+  "description": "SRS Infoway Evaluation Dashboard - Full Stack Application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm install --production",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
+    "init-db": "cd backend && npm run init-db",
+    "clear-db": "cd backend && npm run clear-db",
+    "reset-db": "cd backend && npm run reset-db"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "evaluation",
+    "dashboard",
+    "react",
+    "nodejs",
+    "sqlite",
+    "document-processing"
+  ],
+  "author": "SRS Infoway",
+  "license": "MIT"
+}

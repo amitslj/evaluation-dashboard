@@ -8,9 +8,11 @@ yarn-error.log*
 frontend/dist/
 backend/dist/
 
-# Database
-backend/evaluations.db
+# Database (keep in production, ignore in development)
 backend/evaluations.db-journal
+
+# Development database (comment out for production)
+# backend/evaluations.db
 
 # Uploaded files
 backend/uploads/*

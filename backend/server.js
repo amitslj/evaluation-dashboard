@@ -9,9 +9,17 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: NODE_ENV === 'production' 
+    ? [process.env.FRONTEND_URL, 'https://your-frontend-domain.vercel.app'] 
+    : ['http://localhost:5173', 'http://localhost:3000'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Create uploads directory if it doesn't exist
@@ -504,12 +512,30 @@ app.get('/api/stats', (req, res) => {
   });
 });
 
+// Serve static files in production (for full-stack deployment)
+if (NODE_ENV === 'production') {
+  // Serve frontend build files
+  const frontendPath = path.join(__dirname, '../frontend/dist');
+  app.use(express.static(frontendPath));
+  
+  // Catch-all handler for React Router
+  app.get('*', (req, res) => {
+    // Skip API routes
+    if (req.path.startsWith('/api') || req.path.startsWith('/health')) {
+      return res.status(404).json({ error: 'API endpoint not found' });
+    }
+    res.sendFile(path.join(frontendPath, 'index.html'));
+  });
+}
+
 // Health check
 app.get('/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     message: 'SRS Infoway Evaluation Dashboard API',
-    timestamp: new Date().toISOString() 
+    timestamp: new Date().toISOString(),
+    environment: NODE_ENV,
+    database: fs.existsSync(dbPath) ? 'Connected' : 'Not Found'
   });
 });
 
