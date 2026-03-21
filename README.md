@@ -35,7 +35,7 @@ A comprehensive web application for managing and analyzing candidate evaluation 
 - **npm** (v8 or higher)
 - **Git** (for version control)
 
-## 🛠️ Installation & Setup
+## 🛠️ Local Development Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -89,6 +89,27 @@ npm run dev
 - **Frontend**: http://localhost:5173
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/health
+
+## 🚀 Production Deployment
+
+For production deployment, this application uses a **separate deployment strategy**:
+
+- **Backend**: Deploy to [Render](https://render.com) (Node.js API + SQLite)
+- **Frontend**: Deploy to [Vercel](https://vercel.com) (React SPA)
+
+📖 **See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions**
+
+### Quick Deployment Summary:
+
+1. **Deploy Backend to Render**:
+   - Root Directory: `backend`
+   - Build Command: `npm install --legacy-peer-deps --production && npm run init-db`
+   - Start Command: `node server.js`
+
+2. **Deploy Frontend to Vercel**:
+   - Root Directory: `frontend`
+   - Framework: `Vite`
+   - Environment Variable: `VITE_API_BASE_URL=https://your-backend-url.onrender.com/api`
 
 ## 📁 Project Structure
 
