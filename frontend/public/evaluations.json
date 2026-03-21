@@ -1,0 +1,93 @@
+[
+  {
+    "id": "sample-1",
+    "candidateName": "Anbarasan Solomon",
+    "totalExperience": "14+ yrs",
+    "overallRating": "1.5/5",
+    "recommendation": "Not Selected",
+    "interviewDate": "11.03.2026",
+    "skillsProfile": "Cloud Support Engineer",
+    "uploadedAt": "2026-03-11T10:00:00.000Z",
+    "technicalStrengths": "Linux – 3/5 ; AWS Services – 1/5 ; Kubernetes – 0 ; Understanding of SLAs, business process – 3/5; Application support experience – 2/5",
+    "technicalWeaknesses": "Need to improve knowledge on basic AWS and have more hands-on experience troubleshooting for support engineer role.",
+    "detailedScores": {
+      "Linux": "3/5",
+      "AWS Services": "1/5",
+      "Kubernetes": "0/5",
+      "Understanding of SLAs": "3/5",
+      "Application support experience": "2/5"
+    }
+  },
+  {
+    "id": "sample-2",
+    "candidateName": "John Smith",
+    "totalExperience": "8+ yrs",
+    "overallRating": "4/5",
+    "recommendation": "Selected",
+    "interviewDate": "10.03.2026",
+    "skillsProfile": "Full Stack Developer",
+    "uploadedAt": "2026-03-10T14:30:00.000Z",
+    "technicalStrengths": "React – 4/5 ; Node.js – 4/5 ; AWS – 3/5 ; Problem solving – 4/5",
+    "technicalWeaknesses": "Could improve DevOps knowledge and containerization skills for better deployment practices.",
+    "detailedScores": {
+      "React": "4/5",
+      "Node.js": "4/5",
+      "AWS": "3/5",
+      "Problem solving": "4/5"
+    }
+  },
+  {
+    "id": "sample-3",
+    "candidateName": "Sarah Wilson",
+    "totalExperience": "6+ yrs",
+    "overallRating": "3.5/5",
+    "recommendation": "Selected",
+    "interviewDate": "09.03.2026",
+    "skillsProfile": "Data Engineer",
+    "uploadedAt": "2026-03-09T11:15:00.000Z",
+    "technicalStrengths": "Python – 4/5 ; Data Analysis – 4/5 ; SQL – 3/5 ; Machine Learning – 3/5",
+    "technicalWeaknesses": "Needs more experience with cloud platforms and big data technologies for senior data engineer role.",
+    "detailedScores": {
+      "Python": "4/5",
+      "Data Analysis": "4/5",
+      "SQL": "3/5",
+      "Machine Learning": "3/5"
+    }
+  },
+  {
+    "id": "sample-4",
+    "candidateName": "Mike Johnson",
+    "totalExperience": "5+ yrs",
+    "overallRating": "2/5",
+    "recommendation": "Not Selected",
+    "interviewDate": "08.03.2026",
+    "skillsProfile": "Cloud Support Engineer",
+    "uploadedAt": "2026-03-08T09:00:00.000Z",
+    "technicalStrengths": "Linux – 2/5 ; AWS Services – 2/5 ; Basic troubleshooting – 3/5",
+    "technicalWeaknesses": "Needs significant improvement in cloud technologies and advanced troubleshooting skills.",
+    "detailedScores": {
+      "Linux": "2/5",
+      "AWS Services": "2/5",
+      "Troubleshooting": "3/5"
+    }
+  },
+  {
+    "id": "sample-5",
+    "candidateName": "Emma Davis",
+    "totalExperience": "12+ yrs",
+    "overallRating": "4.5/5",
+    "recommendation": "Selected",
+    "interviewDate": "07.03.2026",
+    "skillsProfile": "DevOps Engineer",
+    "uploadedAt": "2026-03-07T16:45:00.000Z",
+    "technicalStrengths": "Docker – 5/5 ; Kubernetes – 4/5 ; CI/CD – 5/5 ; AWS – 4/5 ; Infrastructure as Code – 4/5",
+    "technicalWeaknesses": "Could improve monitoring and observability practices for large-scale deployments.",
+    "detailedScores": {
+      "Docker": "5/5",
+      "Kubernetes": "4/5",
+      "CI/CD": "5/5",
+      "AWS": "4/5",
+      "Infrastructure as Code": "4/5"
+    }
+  }
+]
