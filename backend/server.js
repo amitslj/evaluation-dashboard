@@ -14,12 +14,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 // Middleware
 const corsOptions = {
   origin: NODE_ENV === 'production' 
-    ? [
-        process.env.FRONTEND_URL, 
-        'https://evaluation-dashboard.alpha.vercel.app',
-        'https://srs-evaluation-dashboard.vercel.app', 
-        /\.vercel\.app$/
-      ] 
+    ? true  // Allow all origins in production (since frontend is served from same domain)
     : ['http://localhost:5173', 'http://localhost:3000'],
   credentials: true
 };

@@ -1,7 +1,6 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 
-  (import.meta.env.PROD 
-    ? 'https://srs-evaluation-backend.onrender.com/api'  // Production backend URL
-    : 'http://localhost:3001/api');
+const API_BASE_URL = import.meta.env.PROD 
+  ? '/api'  // In production, API is served from same domain
+  : 'http://localhost:3001/api';
 console.log('🔗 API Base URL:', API_BASE_URL);
 
 export interface Evaluation {

@@ -90,26 +90,29 @@ npm run dev
 - **Backend API**: http://localhost:3001
 - **Health Check**: http://localhost:3001/health
 
-## 🚀 Production Deployment
+## 🚀 Production Deployment (AWS EC2)
 
-For production deployment, this application uses a **separate deployment strategy**:
+Simple Docker-based deployment on AWS EC2:
 
-- **Backend**: Deploy to [Render](https://render.com) (Node.js API + SQLite)
-- **Frontend**: Deploy to [Vercel](https://vercel.com) (React SPA)
+### Quick Deploy:
+```bash
+# On your EC2 instance
+curl -O https://raw.githubusercontent.com/YOUR_USERNAME/evaluation-dashboard/main/deploy-aws.sh
+chmod +x deploy-aws.sh
+./deploy-aws.sh
+```
 
-📖 **See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions**
+### Manual Deploy:
+```bash
+# Clone repository
+git clone https://github.com/YOUR_USERNAME/evaluation-dashboard.git
+cd evaluation-dashboard
 
-### Quick Deployment Summary:
+# Deploy with Docker
+docker-compose up -d --build
+```
 
-1. **Deploy Backend to Render**:
-   - Root Directory: `backend`
-   - Build Command: `npm install --legacy-peer-deps --production && npm run init-db`
-   - Start Command: `node server.js`
-
-2. **Deploy Frontend to Vercel**:
-   - Root Directory: `frontend`
-   - Framework: `Vite`
-   - Environment Variable: `VITE_API_BASE_URL=https://your-backend-url.onrender.com/api`
+📖 **See [AWS-DEPLOYMENT.md](./AWS-DEPLOYMENT.md) for detailed AWS setup instructions**
 
 ## 📁 Project Structure
 

@@ -14,6 +14,9 @@ backend/evaluations.db-journal
 # Development database (comment out for production)
 # backend/evaluations.db
 
+# Docker data directory
+data/
+
 # Uploaded files
 backend/uploads/*
 !backend/uploads/.gitkeep
